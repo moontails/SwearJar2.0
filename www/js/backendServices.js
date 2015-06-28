@@ -13,7 +13,7 @@ angular.module('starter.backendServices', [])
   Users.createUser = function(username, password) {
     var ref = new Firebase("https://sizzling-fire-9071.firebaseio.com");
     ref.createUser({
-      email: username,
+      email: username + "@battlehack2015.com",
       password: password
     }, function(error, userData) {
       if (error) {
@@ -33,7 +33,7 @@ angular.module('starter.backendServices', [])
         console.log("Successfully created user account with uid:", userData.uid);
       }
     });
-    return d.promise();
+    return d.promise;
   };
 
 
@@ -41,7 +41,7 @@ angular.module('starter.backendServices', [])
       var d = $q.defer();
       var ref = new Firebase("https://sizzling-fire-9071.firebaseio.com");
       ref.authWithPassword({
-        "email": username,
+        "email": username + "@battlehack2015.com",
         "password": password
       }, function(error, authData) {
         if (error) {

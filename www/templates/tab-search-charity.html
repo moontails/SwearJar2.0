@@ -13,7 +13,7 @@
 
 
     <div class="list card">
-      <ion-item class="" ng-repeat="result in results" type="item-text-wrap">
+      <ion-item class="" ng-if="results" ng-repeat="result in results" type="item-text-wrap">
         <a href="#" class="item" ng-click="onselect(result.name)">{{result.name}}</a>
       </ion-item>
     </div>
