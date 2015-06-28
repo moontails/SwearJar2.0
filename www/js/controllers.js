@@ -21,13 +21,20 @@ angular.module('starter.controllers', [])
 
   $scope.setUser = function () {
     Firebase.getUserDetails()
-  }
+  };
 }])
 
-.controller('QuestCtrl', function($scope, QuestService) {
+.controller('QuestCtrl',['$scope', '$rootScope', '$state', 'Quests', function($scope, $rootScope, $state, Quests) {
   $scope.data = {};
+  $scope.quests = Quests;
+  $scope.addQuest = function() {
+    console.log(JSON.stringify($scope.data));
+    $scope.quests.$add($scope.data);
+  };
+
 
   //$scope.oncreate = QuestService.save($scope.data);
+<<<<<<< HEAD
   $scope.oncreate = function() {
     QuestService.save($scope.data);
   };
@@ -39,6 +46,14 @@ angular.module('starter.controllers', [])
     $scope.quests = temp;
   };
 })
+=======
+  // $scope.oncreate = function() {
+  //   QuestService.save($scope.data);
+  // };
+  // $scope.quests = QuestService.all();
+
+}])
+>>>>>>> firebase integration
 
 .controller('DashCtrl', function($scope) {})
 
@@ -61,6 +76,10 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> firebase integration
 .controller('AccountCtrl', function($scope) {
 
 });

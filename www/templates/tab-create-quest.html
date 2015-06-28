@@ -21,20 +21,22 @@
         <span class="input-label">Penalty (per fault)</span>
         <input type="text" placeholder="$0.5" ng-model="data.penalty">
       </label>
-      <label class="item item-input item-stacked-label">
-            <div class="input-label" ng-model="data.duration">
-              Duration
-              <select>
-                <option>1 week</option>
-                <option selected>2 weeks</option>
-                <option>1 month</option>
-                <option>2 months</option>
-              </select>
-            </div>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Duration
+        </div>
+        <select>
+          <option>1 week</option>
+          <option default>2 weeks</option>
+          <option>1 month</option>
+          <option>2 months</option>
+        </select>
       </label>
+
     </div>
 
-    <button class="button" ng-click="oncreate()">
+    <button class="button" ng-click="addQuest()">
       Create
     </button>
   </ion-content>
