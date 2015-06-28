@@ -1,6 +1,7 @@
 angular.module('starter.services', [])
 
 .factory('LoginService', function($state, Firebase){
+
   return {
     // this is where we shall check if user already created
     checklogin: function(username, pwd) {

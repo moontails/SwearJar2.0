@@ -9,7 +9,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
 .run(['$ionicPlatform', '$state', '$rootScope', '$http', 'Firebase',
     function($ionicPlatform, $state, $rootScope, $http, Firebase) {
-
     // authorization for server and required encoding for OrientDB REST API
     // $http.defaults.headers.common['Authorization'] = "basic YWRtaW46YWRtaW4=";
     // $http.defaults.headers.common['Accept-Encoding'] = "gzip,deflate";
