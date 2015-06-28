@@ -6,9 +6,10 @@ angular.module('starter.services', [])
     checklogin: function(username, pwd) {
       // checks if user exists with username password combo
       // returns user details if exists
-      var userDetails = Firebase.getUserDetails(username, pwd);
-      console.log("username: " + username + " - password: " + pwd);
-      return userDetails;
+      // var userDetails = Firebase.getUserDetails(username, pwd);
+      // console.log("username: " + username + " - password: " + pwd);
+      // return userDetails;
+      $state.go('tab.home')
     },
     // this is where we shall check to see if user exists and let them login
     signup: function(user, pwd) {

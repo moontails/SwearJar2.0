@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.quest', 'starter.backendServices'])
+angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.services', 'starter.quest', 'starter.backendServices'])
 
 .run(['$ionicPlatform', '$state', '$rootScope', '$http', 'Firebase',
     function($ionicPlatform, $state, $rootScope, $http, Firebase) {
