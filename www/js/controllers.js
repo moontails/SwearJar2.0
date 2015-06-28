@@ -20,9 +20,7 @@ angular.module('starter.controllers', [])
     console.log("Hi");
   };
 
-  $scope.quests = function() {
-    QuestService.all();
-  };
+  $scope.quests = QuestService.all();
 })
 
 .controller('DashCtrl', function($scope) {})
