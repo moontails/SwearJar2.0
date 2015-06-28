@@ -49,7 +49,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     views: {
       'tab-create-quest': {
         templateUrl: 'templates/tab-create-quest.html',
-        controller: 'QuestCtrl'		
+        controller: 'QuestCtrl'
      }
    }
   })
