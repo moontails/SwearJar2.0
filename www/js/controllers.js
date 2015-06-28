@@ -71,27 +71,16 @@ angular.module('starter.controllers', [])
   };
 
 
-<<<<<<< HEAD
-  //$scope.oncreate = QuestService.save($scope.data);
-<<<<<<< HEAD
-  $scope.oncreate = function() {
-    QuestService.save($scope.data);
->>>>>>> firebase integration
-  };
-
-
   $scope.addcount = function(quest) {
     for(var i=0; i < $scope.quests.length; i++){
       //console.log("Quest clicked", $scope.quests[i]["$id"]);
       if($scope.quests[i]["$id"] == quest["$id"]){
         $scope.quests[i].count += 1;
         break;
+      }
     }
-  }
-};
+  };
 
-=======
->>>>>>> merge
 }])
 
 .controller('CharityCtrl', ['$scope', '$rootScope', '$state', 'SearchService', function($scope, $rootScope, $state, SearchService) {
