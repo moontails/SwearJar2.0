@@ -21,6 +21,15 @@ angular.module('starter.controllers', [])
   };
 
   $scope.quests = QuestService.all();
+
+  $scope.addcount = function(quest) {
+    var temp = QuestService.addcount(quest);
+    $scope.quests = temp;
+  };
+})
+
+.controller('QuestDetailCtrl', function($scope, QuestService){
+  $scope.chat = QuestService.get($stateParams.questId);
 })
 
 .controller('DashCtrl', function($scope) {})
@@ -42,14 +51,6 @@ angular.module('starter.controllers', [])
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
-})
-
-.controller('QuestCtrl', function($scope, QuestService) {
-
-$scope.data = {};
-$scope.oncreate = function() {
-  QuestService.save($scope.data);
-};
 })
 
 .controller('AccountCtrl', function($scope) {

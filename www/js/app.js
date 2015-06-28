@@ -53,6 +53,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
      }
    }
   })
+
+  .state('tab.quest-detail', {
+    url: '/quests/:questId',
+    views: {
+      'tab-quests': {
+        templateUrl: 'templates/quest-detail.html',
+        controller: 'QuestDetailCtrl'
+      }
+    }
+  })
   // Each tab has its own nav history stack:
 
   .state('tab.home', {
