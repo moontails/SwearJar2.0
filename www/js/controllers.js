@@ -36,17 +36,9 @@ angular.module('starter.controllers', [])
     }, function(error){
       $("#login-failed").val(JSON.stringify(error.code))
       $("#login-failed").show();
-    });;
-
+    });
   };
 
-<<<<<<< HEAD
-=======
-  $scope.setUser = function () {
-
-  };
-
->>>>>>> user authentication completed
 }])
 
 .controller('QuestCtrl',['$scope', '$rootScope', '$state', 'Quests', function($scope, $rootScope, $state, Quests) {
