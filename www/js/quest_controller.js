@@ -4,7 +4,6 @@ angular.module('starter.quest', [])
 
   return {
       save: function (data) {
-        console.log("Saved quest data for " + data.name);
         allQuests.push(data);
       }
   };

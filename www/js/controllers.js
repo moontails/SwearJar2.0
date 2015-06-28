@@ -10,7 +10,7 @@ angular.module('starter.controllers', [])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-
+  
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
     Chats.remove(chat);
@@ -19,14 +19,6 @@ angular.module('starter.controllers', [])
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
-})
-
-.controller('QuestCtrl', function($scope, QuestService) {
-
-$scope.data = {};
-$scope.oncreate = function() {
-  QuestService.save($scope.data);
-};
 })
 
 .controller('AccountCtrl', function($scope) {
