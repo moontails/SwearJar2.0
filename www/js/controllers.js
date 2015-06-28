@@ -23,6 +23,13 @@ angular.module('starter.controllers', [])
     Users.createUser($scope.data.username, $scope.data.password);
   };
 
+<<<<<<< HEAD
+=======
+  $scope.setUser = function () {
+
+  };
+
+>>>>>>> user authentication completed
 }])
 
 .controller('QuestCtrl',['$scope', '$rootScope', '$state', 'Quests', function($scope, $rootScope, $state, Quests) {
