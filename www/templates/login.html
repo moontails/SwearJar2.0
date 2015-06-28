@@ -2,13 +2,13 @@
 This template loads for when the app is opened,
 The user at this point needs to sign up or login at this point.
 -->
-<ion-view title="SwearJar 2.0!" name="login-view">
+<ion-view title="SwearJar 2.0" name="login-view">
   <ion-content class="padding"  style="text-align: center;">
     <div>
       <img ng-src="../img/ionic.png" style="height:200px">
       <br/>
-      Welcome to Swear Jar 2.0<br/>
-      Login/Signup to continue...<br/><br/><br/><br/>
+      Welcome to Swear Jar 2.0!<br/>
+      Login/Signup to continue.<br/><br/><br/><br/>
     </div>
     <div class="list list-inset">
       <label class="item item-input">
@@ -22,6 +22,10 @@ The user at this point needs to sign up or login at this point.
       <a class="button button-calm" ng-click="signup()">Sign Up!</a>
       <a class="button" ng-click="login()">Login</a>
     </div>
+    <div id="login-failed" style="display:none;">
+      Invalid Username/Password combination.
+    </div>
+
   </ion-content>
 
   <div class="bar bar-footer bar-dark">
