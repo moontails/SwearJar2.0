@@ -5,21 +5,45 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.quest', 'starter.backendServices'])
+angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.services', 'starter.quest', 'starter.backendServices'])
 
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleLightContent();
-    }
-  });
-})
+.run(['$ionicPlatform', '$state', '$rootScope', '$http', 'Firebase',
+    function($ionicPlatform, $state, $rootScope, $http, Firebase) {
+    // authorization for server and required encoding for OrientDB REST API
+    // $http.defaults.headers.common['Authorization'] = "basic YWRtaW46YWRtaW4=";
+    // $http.defaults.headers.common['Accept-Encoding'] = "gzip,deflate";
+    $ionicPlatform.ready(function() {
+        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+        // for form inputs)
+        if(window.cordova && window.cordova.plugins.Keyboard) {
+          cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        }
+        if(window.StatusBar) {
+        // org.apache.cordova.statusbar required
+          StatusBar.styleDefault();
+        }
+    });
+
+
+    // called on every state change
+    $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {
+        // console.log('$rootScope: '+JSON.stringify(Object.keys($rootScope)));
+        // console.log("toState " + toState.name + ", session " + Session.data.status);
+        // if (toState.authenticate && Session.data.status != "connected") {
+        //     // if state requires authentication and user is not authenticated
+        //     // console.log('LocalStorage: '+JSON.stringify(LocalStorage));
+        //     if (LocalStorage.user_session){
+        //         Session = LocalStorage.user_session;
+        //         console.log("Restored user_session");
+        //     } else {
+        //         console.log("state requires authenticate and user not logged in");
+        //         event.preventDefault();
+        //         $state.go('login');
+        //     }
+        // }
+    });
+
+}])
 
 .config(function($stateProvider, $urlRouterProvider) {
 

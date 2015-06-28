@@ -7,34 +7,36 @@
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">Target</span>
-        <input type="email" placeholder="abc@gmail.com" ng-model="data.target">
+        <input type="text" placeholder="abc@gmail.com" ng-model="data.target">
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">Your Supporters (Optional)</span>
-        <input type="email" placeholder="def@gmail.com" ng-mode="data.supporter">
+        <input type="text" placeholder="def@gmail.com" ng-model="data.supporter">
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">Your Contribution</span>
-        <input type="text" placeholder="$25" ng-mode="data.amount">
+        <input type="text" placeholder="$25" ng-model="data.amount">
       </label>
       <label class="item item-input item-stacked-label">
         <span class="input-label">Penalty (per fault)</span>
-        <input type="text" placeholder="$0.5" ng-mode="data.penalty">
+        <input type="text" placeholder="$0.5" ng-model="data.penalty">
       </label>
-      <label class="item item-input item-stacked-label">
-            <div class="input-label" ng-model="data.duration">
-              Duration
-              <select>
-                <option>1 week</option>
-                <option selected>2 weeks</option>
-                <option>1 month</option>
-                <option>2 months</option>
-              </select>
-            </div>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Duration
+        </div>
+        <select>
+          <option>1 week</option>
+          <option default>2 weeks</option>
+          <option>1 month</option>
+          <option>2 months</option>
+        </select>
       </label>
+
     </div>
 
-    <button class="button" ng-click="oncreate()">
+    <button class="button" ng-click="addQuest()">
       Create
     </button>
   </ion-content>

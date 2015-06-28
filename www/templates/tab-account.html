@@ -3,35 +3,37 @@
     <div class="card">
       <div class="item item-divider">Personal Details</div>
 
-      <div class="item item-input item-icon-left">
+      <label class="item item-input item-icon-left">
         <i class="ion-android-person padding-right"></i>
-        <input type="text" placeholder="Name" value="{{user.name}}">
-      </div>
+        <input type="text" placeholder="Name" ng-model="user.name" name="">
+      </label>
 
-      <div class="item item-input">
+      <label class="item item-input">
         <i class="ion-email padding-right"></i>
-        <input type="email" placeholder="Email" value="{{user.email}}">
-      </div>
+        <input type="email" placeholder="Email" ng-model="user.email">
+      </label>
 
-      <div class="item item-input">
+      <label class="item item-input">
         <i class="ion-android-call padding-right"></i>
-        <input type="tel" placeholder="Phone Number" value="{{user.phone}}">
-      </div>
+        <input type="tel" placeholder="Phone Number" ng-model="user.phone">
+      </label>
     </div>
 
     <div class="card">
       <div class="item item-divider">Account Details</div>
 
-      <div class="item item-input item-icon-left">
+      <label class="item item-input item-icon-left">
         <i class="ion-android-person padding-right"></i>
-        <input type="text" placeholder="Username" value="{{user.username}}">
-      </div>
+        <input type="text" placeholder="Username" ng-model="user.username">
+      </label>
 
-      <div class="item item-input">
+      <label class="item item-input">
         <i class="ion-email padding-right"></i>
         <input type="password" placeholder="Password">
-      </div>
+      </label>
+
     </div>
+
     <div class="padding">
       <button class="button button-block button-positive" ng-click="saveDetails()">Save</button>
     </div>
