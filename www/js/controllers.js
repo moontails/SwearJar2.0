@@ -1,6 +1,5 @@
 angular.module('starter.controllers', [])
 
-
 .controller('LoginCtrl', ['$scope', '$rootScope', '$state','LoginService', function($scope, $rootScope, $state, LoginService) {
   $scope.data = {};
   //check login kanappa
@@ -32,8 +31,13 @@ angular.module('starter.controllers', [])
   $scope.oncreate = function() {
     QuestService.save($scope.data);
   };
-
+  console.log("Hello");
   $scope.quests = QuestService.all();
+
+  $scope.addcount = function(quest) {
+    var temp = QuestService.addcount(quest);
+    $scope.quests = temp;
+  };
 })
 
 .controller('DashCtrl', function($scope) {})
@@ -55,14 +59,6 @@ angular.module('starter.controllers', [])
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
-})
-
-.controller('QuestCtrl', function($scope, QuestService) {
-
-$scope.data = {};
-$scope.oncreate = function() {
-  QuestService.save($scope.data);
-};
 })
 
 .controller('AccountCtrl', function($scope) {
