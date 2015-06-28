@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.quest'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -29,6 +29,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
+  //added route to login/signup
+  .state('login', {
+    url: '/login',
+    templateUrl: 'templates/login.html',
+    controller: 'LoginCtrl'
+  })
+
+
   // setup an abstract state for the tabs directive
     .state('tab', {
     url: "/tab",
@@ -37,6 +45,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   })
 
   // Each tab has its own nav history stack:
+
+  .state('tab.home', {
+    url: '/home',
+    views: {
+      'tab-home':{
+        templateUrl: 'templates/tab-home.html',
+        controller: 'QuestCtrl'
+      }
+    }
+  })
 
   .state('tab.dash', {
     url: '/dash',
@@ -78,6 +96,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/login');
 
 });

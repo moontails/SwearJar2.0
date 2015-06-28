@@ -1,5 +1,30 @@
 angular.module('starter.controllers', [])
 
+.controller('LoginCtrl', function($scope, LoginService) {
+  $scope.data = {};
+  //check login kanappa
+  $scope.login = function() {
+    LoginService.checklogin($scope.data.username, $scope.data.password);
+  };
+  //sign up madri!
+  $scope.signup = function() {
+    LoginService.signup($scope.data.username, $scope.data.password);
+  };
+})
+
+.controller('QuestCtrl', function($scope, QuestService) {
+  $scope.data = {};
+
+  //$scope.oncreate = QuestService.save($scope.data);
+  $scope.oncreate = function() {
+    console.log("Hi");
+  };
+
+  $scope.quests = function() {
+    QuestService.all();
+  };
+})
+
 .controller('DashCtrl', function($scope) {})
 
 .controller('ChatsCtrl', function($scope, Chats) {
@@ -10,7 +35,7 @@ angular.module('starter.controllers', [])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-  
+
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
     Chats.remove(chat);
