@@ -1,10 +1,15 @@
 angular.module('starter.services', [])
 
-.factory('LoginService', function(){
+.factory('LoginService', function($state, Firebase){
   return {
     // this is where we shall check if user already created
-    checklogin: function(user, pwd) {
-      console.log("user: " + user + " - password: " + pwd);
+    checklogin: function(username, pwd) {
+      // checks if user exists with username password combo
+      // returns user details if exists
+      // var userDetails = Firebase.getUserDetails(username, pwd);
+      // console.log("username: " + username + " - password: " + pwd);
+      // return userDetails;
+      $state.go('tab.home')
     },
     // this is where we shall check to see if user exists and let them login
     signup: function(user, pwd) {
