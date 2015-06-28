@@ -1,0 +1,30 @@
+<!--
+This template loads for when the app is opened,
+The user at this point needs to sign up or login at this point.
+-->
+<ion-view title="SwearJar 2.0!" name="login-view">
+  <ion-content class="padding"  style="text-align: center;">
+    <div>
+      <img ng-src="../img/ionic.png" style="height:200px">
+      <br/>
+      Welcome to Swear Jar 2.0<br/>
+      Login/Signup to continue...<br/><br/><br/><br/>
+    </div>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" placeholder="Email" ng-model="data.username">
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Password" ng-model="data.password">
+      </label>
+    </div>
+    <div class="button-bar">
+      <a class="button button-calm" ng-click="signup()">Sign Up!</a>
+      <a class="button" ng-click="login()">Login</a>
+    </div>
+  </ion-content>
+
+  <div class="bar bar-footer bar-dark">
+    <div class="title">Version: 1.15</div>
+  </div>
+</ion-view>
