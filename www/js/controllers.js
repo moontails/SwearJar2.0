@@ -73,6 +73,20 @@ angular.module('starter.controllers', [])
     }
   };
 
+  $scope.paymentgateway = function(quest) {
+    $state.go('tab.pay');
+  }
+
+}])
+
+.controller('PayCtrl', ['$scope', '$rootScope', '$state', function($scope, $rootScope, $state) {
+  $scope.makePayment = function(cardNumber, expiryDate) {
+    $http.post
+  }
+
+  $scope.selectCharity = function() {
+    $state.go('tab.search-charity');
+  };
 }])
 
 .controller('CharityCtrl', ['$scope', '$rootScope', '$state', 'SearchService', function($scope, $rootScope, $state, SearchService) {
@@ -94,18 +108,15 @@ angular.module('starter.controllers', [])
 
   $scope.onselect = function(name) {
     console.log("Selected Charity",name);
-
-    $scope.$apply( function() {
-        $scope.data.charity = name;
-    });
-
-    $("#CharityName").show();
-    $("#CharityName").find('input').val(name);
-    $("#CharityButton").hide();
-    $state.go('tab.create-quest');
+    //$scope.payment.charityemail = name.split(" ")[0].toLowerCase() + "@gmail.com";
+    $("#CharityPay").show();
+    $("#donarName").html(name.split(" ")[0].toLowerCase() + "@gmail.com");
+    $("#donarAmount").html("$50");
+    $("#CharitySelect").hide();
+    console.log("Selecte charity" + $scope.charityemail);
+    $state.go('tab.pay');
     //console.log("Selected " + name);
   };
-
 }])
 
 .controller('DashCtrl', function($scope) {})

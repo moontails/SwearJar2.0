@@ -79,9 +79,9 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
   })
 
   .state('tab.search-charity', {
-    url: '/create-quest/search-charity',
+    url: '/home/pay/search-charity',
     views: {
-      'tab-create-quest': {
+      'tab-home': {
         templateUrl: 'templates/tab-search-charity.html',
         controller: 'CharityCtrl'
       }
@@ -128,6 +128,16 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
         }
       }
     })
+
+    .state('tab.pay', {
+    url: '/home/pay',
+    views: {
+      'tab-home':{
+        templateUrl: 'templates/payment.html',
+        controller: 'PayCtrl'
+      }
+    }
+  })
 
 
   .state('tab.account', {

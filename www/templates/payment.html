@@ -1,0 +1,48 @@
+<!--
+This template loads for when the app is opened,
+The user at this point needs to sign up or login at this point.
+-->
+<ion-view title="Payment" name="login-view">
+  <ion-content class="padding"  style="text-align: center;">
+    <div>
+      <br/>
+      Please select a charity to continue<br/><br/><br/><br/>
+    </div>
+    <div class="list list-inset">
+
+      <label class="item item-input item-stacked-label" id="CharitySelect">
+          <button class="button icon-right ion-chevron-right button-clear" href="#/tab/search-charity" ng-click="selectCharity()">Select Charity</button>
+      </label>
+      <!-- <label class="item item-input item-stacked-label" id="CharityPay" style="display:none">
+          <span></span>
+          <input type="text" ng-model="payment.charityemail">
+          Thank you for your donation
+      </label> -->
+    </div>
+    <div class="list card" id="CharityPay" style="display:none">
+
+      <div class="item item-avatar text-center">
+        A payment of <span id="donorAmount"></span> will be made to <span id="donarName"></span>
+        <br/>Please click the button below to continue.
+      </div>
+      <div class="item item-body text-center">
+        <p>
+          <button class="button button-calm" ng-click="makePayment(payment.charityemail)">
+            Donate
+          </button>
+        </p>
+      </div>
+
+      <div class="item tabs tabs-secondary">
+        <span>Thank you for your Donation.</span>
+      </div>
+
+    </div>
+
+
+  </ion-content>
+
+  <div class="bar bar-footer bar-dark">
+    <div class="title">Version: 1.15</div>
+  </div>
+</ion-view>
