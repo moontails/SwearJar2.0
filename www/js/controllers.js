@@ -1,27 +1,32 @@
 angular.module('starter.controllers', [])
 
-.controller('LoginCtrl', ['$scope', '$rootScope', '$state','LoginService', function($scope, $rootScope, $state, LoginService) {
+.controller('LoginCtrl', ['$scope', '$rootScope', '$state', '$q', 'Users',
+  function($scope, $rootScope, $state, $q, Users) {
+
   $scope.data = {};
   //check login kanappa
   $scope.login = function() {
+    var d = $q.defer();
     $("#login-failed").hide();
-    var user = LoginService.checklogin($scope.data.username, $scope.data.password);
-    console.log(user);
-    if(user) {
-      $scope.user = user;
+
+    Users.authenticateUser($scope.data.username, $scope.data.password)
+    .then(function(success){
       $state.go('tab.home');
-    } else {
+    }, function(error){
+      console.log(JSON.stringify(error));
       $("#login-failed").show();
-    }
+    });
+
   };
   //sign up madri!
   $scope.signup = function() {
-    LoginService.signup($scope.data.username, $scope.data.password);
+    Users.createUser($scope.data.username, $scope.data.password);
   };
 
   $scope.setUser = function () {
-    Firebase.getUserDetails()
+
   };
+
 }])
 
 .controller('QuestCtrl',['$scope', '$rootScope', '$state', 'Quests', function($scope, $rootScope, $state, Quests) {
