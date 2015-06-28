@@ -23,6 +23,28 @@ angular.module('starter.controllers', [])
   $scope.quests = QuestService.all();
 })
 
+.controller('CharityCtrl', function($scope, SearchService) {
+  $scope.query = {};
+  $scope.results = {};
+  console.log("Initial",$scope.query);
+  //console.log("Hi");
+  $scope.search = function() {
+      console.log("!!");
+      $scope.results = SearchService.search($scope.query.name)
+      .then(function(response) {
+        $scope.results = response;
+      }, function(err){
+        $scope.results.push = "No Results Found";
+      });
+      console.log("Received results "+ $scope.results.length);
+  };
+
+  $scope.onselect = function(name) {
+    console.log("Selected " + name);
+  };
+
+})
+
 .controller('DashCtrl', function($scope) {})
 
 .controller('ChatsCtrl', function($scope, Chats) {
@@ -44,13 +66,6 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('QuestCtrl', function($scope, QuestService) {
-
-$scope.data = {};
-$scope.oncreate = function() {
-  QuestService.save($scope.data);
-};
-})
 
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
