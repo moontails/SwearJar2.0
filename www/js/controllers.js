@@ -17,19 +17,13 @@ angular.module('starter.controllers', [])
 
   //$scope.oncreate = QuestService.save($scope.data);
   $scope.oncreate = function() {
-    console.log("Hi");
+    QuestService.save($scope.data);
   };
 
   $scope.quests = QuestService.all();
 })
 
 .controller('DashCtrl', function($scope) {})
-.controller('QuestCtrl', function($scope, QuestService) {
-  $scope.data = {};
-  $scope.oncreate = function() {
-    QuestService.save($scope.data);
-  };		
-})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
