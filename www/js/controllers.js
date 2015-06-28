@@ -23,22 +23,12 @@ angular.module('starter.controllers', [])
     Users.createUser($scope.data.username, $scope.data.password);
   };
 
-  $scope.setUser = function () {
-<<<<<<< HEAD
-
-  };
-
-=======
-    Firebase.getUserDetails()
-  };
->>>>>>> firebase integration
 }])
 
 .controller('QuestCtrl',['$scope', '$rootScope', '$state', 'Quests', function($scope, $rootScope, $state, Quests) {
   $scope.data = {};
   $scope.quests = Quests;
   $scope.addQuest = function() {
-<<<<<<< HEAD
     $scope.data.count = 0;
     var now = new Date();
     now.setDate(now.getDate() + parseInt($scope.data.duration));
@@ -51,12 +41,12 @@ angular.module('starter.controllers', [])
 
   $scope.selectCharity = function() {
     $state.go('tab.search-charity');
-=======
     console.log(JSON.stringify($scope.data));
     $scope.quests.$add($scope.data);
   };
 
 
+<<<<<<< HEAD
   //$scope.oncreate = QuestService.save($scope.data);
 <<<<<<< HEAD
   $scope.oncreate = function() {
@@ -75,6 +65,8 @@ angular.module('starter.controllers', [])
   }
 };
 
+=======
+>>>>>>> merge
 }])
 
 .controller('CharityCtrl', ['$scope', '$rootScope', '$state', 'SearchService', function($scope, $rootScope, $state, SearchService) {
@@ -93,7 +85,6 @@ angular.module('starter.controllers', [])
       });
       console.log("Received results "+ $scope.results.length);
   };
-<<<<<<< HEAD
 
   $scope.onselect = function(name) {
     console.log("Selected Charity",name);
@@ -110,17 +101,6 @@ angular.module('starter.controllers', [])
   };
 
 }])
-=======
-})
-=======
-  // $scope.oncreate = function() {
-  //   QuestService.save($scope.data);
-  // };
-  // $scope.quests = QuestService.all();
-
-}])
->>>>>>> firebase integration
->>>>>>> firebase integration
 
 .controller('DashCtrl', function($scope) {})
 
@@ -143,10 +123,6 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-<<<<<<< HEAD
-=======
-
->>>>>>> firebase integration
 .controller('AccountCtrl', function($scope) {
 
 });
