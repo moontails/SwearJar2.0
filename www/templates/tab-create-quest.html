@@ -26,20 +26,27 @@
         <div class="input-label">
           Duration
         </div>
-        <select>
-          <option>1 week</option>
-          <option default>2 weeks</option>
-          <option>1 month</option>
-          <option>2 months</option>
+        <select ng-model="data.duration">
+          <option value="7" default>1 week</option>
+          <option value="14">2 weeks</option>
+          <option value="30">1 month</option>
+          <option value="60">2 months</option>
         </select>
       </label>
-      <label class="item item-input item-stacked-label">
-        <button class="button icon-right ion-chevron-right button-clear" href="#/tab/search-charity">Select Charity</a>
+      <label class="item item-input item-stacked-label" id="CharityButton">
+          <button class="button icon-right ion-chevron-right button-clear" href="#/tab/search-charity" ng-click="selectCharity()">Select Charity</button>
+      </label>
+
+      <label class="item item-input item-stacked-label" id="CharityName" style="display:none">
+        <span class="input-label">Charity Name</span>
+        <input type="text" ng-model="data.charity">
       </label>
     </div>
 
-    <button class="button" ng-click="addQuest()">
-      Create
-    </button>
+    <div class="text-center">
+      <p>
+        <button class="button button-positive" ng-click="addQuest()">Create</button>
+      </p>
+    </div>
   </ion-content>
 </ion-view>

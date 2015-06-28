@@ -11,11 +11,10 @@
       </div>
     </div>
 
-    <div class="list ">
-      <ion-item class="item-icon-right" ng-repeat="result in results" type="item-text-wrap">
-        <div class="item-content ">
-          <a href="#" ng-click="onselect(result.name)">{{result.name}}</a>
-        </div>
+
+    <div class="list card">
+      <ion-item class="" ng-repeat="result in results" type="item-text-wrap">
+        <a href="#" class="item" ng-click="onselect(result.name)">{{result.name}}</a>
       </ion-item>
     </div>
 
