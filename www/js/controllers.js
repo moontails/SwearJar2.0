@@ -21,7 +21,7 @@ angular.module('starter.controllers', [])
   };
 
   $scope.setUser = function () {
-    MongoDB.getUserDetails()
+    Firebase.getUserDetails()
   }
 }])
 

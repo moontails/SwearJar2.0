@@ -1,9 +1,9 @@
 angular.module('starter.backendServices', [])
 
-.factory('MongoDB', function(){
-  var MongoDB = {};
+.factory('Firebase', function(){
+  var Firebase = {};
 
-  MongoDB.getUserDetails = function(username, password) {
+  Firebase.getUserDetails = function(username, password) {
     // Get user from mogo db.
 
     var userDetails = {
@@ -15,5 +15,9 @@ angular.module('starter.backendServices', [])
 
     return userDetails;
   };
-  return MongoDB;
+
+  Firebase.getQuests = function(username) {
+    // get quests from browser
+  }
+  return Firebase;
 });

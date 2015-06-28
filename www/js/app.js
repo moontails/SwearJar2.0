@@ -7,8 +7,8 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.quest', 'starter.backendServices'])
 
-.run(['$ionicPlatform', '$state', '$rootScope', '$http', 'MongoDB',
-    function($ionicPlatform, $state, $rootScope, $http, MongoDB) {
+.run(['$ionicPlatform', '$state', '$rootScope', '$http', 'Firebase',
+    function($ionicPlatform, $state, $rootScope, $http, Firebase) {
 
     // authorization for server and required encoding for OrientDB REST API
     // $http.defaults.headers.common['Authorization'] = "basic YWRtaW46YWRtaW4=";
