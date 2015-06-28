@@ -12,7 +12,7 @@ The user at this point should have signed in
           <div class="item item-avatar">
             <img src="../img/ionic.png">
             <h2>{{quest.name}}</h2>
-            <p>{{quest.amount}}</p>
+            <p>{{"$" + quest.amount}}</p>
           </div>
 
           <div class="item item-body text-center">
@@ -24,7 +24,7 @@ The user at this point should have signed in
           </div>
 
           <div class="item tabs tabs-secondary">
-            <a class="tab-item" href="#/tab/quests/{{quest.id}}">Details</a>
+            <a class="tab-item" href="#/tab/quests/{{quest.questid}}">Details</a>
             <a class="tab-item" href="#">Count: {{quest.count}}</a>
           </div>
 

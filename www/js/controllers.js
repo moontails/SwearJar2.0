@@ -41,7 +41,17 @@ angular.module('starter.controllers', [])
   $scope.selectCharity = function() {
     $state.go('tab.search-charity');
   };
-  
+
+
+  $scope.addcount = function(quest) {
+    for(var i=0; i < $scope.quests.length; i++){
+      //console.log("Quest clicked", $scope.quests[i]["$id"]);
+      if($scope.quests[i]["$id"] == quest["$id"]){
+        $scope.quests[i].count += 1;
+        break;
+    }
+  }
+};
 
 }])
 
