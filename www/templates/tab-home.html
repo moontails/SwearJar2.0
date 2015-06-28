@@ -1,7 +1,11 @@
-<ion-view view-title="Chats2">
+<!--
+This template loads the quests in homepage
+The user at this point should have signed in
+-->
+<ion-view view-title="QuestBoard">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="quest in quests" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
         <img ng-src="{{chat.face}}">
         <h2>{{chat.name}}</h2>
         <p>{{chat.lastText}}</p>

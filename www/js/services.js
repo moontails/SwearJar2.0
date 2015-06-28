@@ -1,5 +1,18 @@
 angular.module('starter.services', [])
 
+.factory('LoginService', function(){
+  return {
+    // this is where we shall check if user already created
+    checklogin: function(user, pwd) {
+      console.log("user: " + user + " - password: " + pwd);
+    },
+    // this is where we shall check to see if user exists and let them login
+    signup: function(user, pwd) {
+      console.log("user: " + user + " - password: " + pwd);
+    }
+  };
+})
+
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 
