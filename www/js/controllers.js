@@ -42,6 +42,7 @@ angular.module('starter.controllers', [])
     $scope.data.enddate = now;
     $scope.data.status = "active";
     console.log(JSON.stringify($scope.data));
+    $scope.data.count = 0;
     $scope.quests.$add($scope.data);
     $state.go('tab.home');
   };
