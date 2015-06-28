@@ -28,14 +28,27 @@ angular.module('starter.controllers', [])
   $scope.data = {};
   $scope.quests = Quests;
   $scope.addQuest = function() {
+    $scope.data.count = 0;
+    var now = new Date();
+    now.setDate(now.getDate() + parseInt($scope.data.duration));
+    $scope.data.enddate = now;
+    $scope.data.status = "active";
     console.log(JSON.stringify($scope.data));
     $scope.quests.$add($scope.data);
+    $state.go('tab.home');
   };
+
+  $scope.selectCharity = function() {
+    $state.go('tab.search-charity');
+  };
+  
+
 }])
 
-.controller('CharityCtrl', function($scope, SearchService) {
+.controller('CharityCtrl', ['$scope', '$rootScope', '$state', 'SearchService', function($scope, $rootScope, $state, SearchService) {
   $scope.query = {};
   $scope.results = {};
+  $scope.data = $scope.data || {};
   console.log("Initial",$scope.query);
   //console.log("Hi");
   $scope.search = function() {
@@ -50,10 +63,20 @@ angular.module('starter.controllers', [])
   };
 
   $scope.onselect = function(name) {
-    console.log("Selected " + name);
+    console.log("Selected Charity",name);
+
+    $scope.$apply( function() {
+        $scope.data.charity = name;
+    });
+
+    $("#CharityName").show();
+    $("#CharityName").find('input').val(name);
+    $("#CharityButton").hide();
+    $state.go('tab.create-quest');
+    //console.log("Selected " + name);
   };
 
-})
+}])
 
 .controller('DashCtrl', function($scope) {})
 
