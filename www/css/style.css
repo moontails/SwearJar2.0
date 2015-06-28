@@ -1,1 +1,15 @@
 /* Empty. Add your own CSS if you like */
+.active {
+  background-color: #e74c3c !important;
+  color: white !important;
+}
+
+.donate {
+  background-color: #2980b9 !important;
+  color: white !important;
+}
+
+.ended {
+  background-color: #34495e !important;
+  color: white !important;
+}
