@@ -1,16 +1,29 @@
 angular.module('starter.controllers', [])
 
-.controller('LoginCtrl', function($scope, LoginService) {
+
+.controller('LoginCtrl', ['$scope', '$rootScope', '$state','LoginService', function($scope, $rootScope, $state, LoginService) {
   $scope.data = {};
   //check login kanappa
   $scope.login = function() {
-    LoginService.checklogin($scope.data.username, $scope.data.password);
+    $("#login-failed").hide();
+    var user = LoginService.checklogin($scope.data.username, $scope.data.password);
+    console.log(user);
+    if(user) {
+      $scope.user = user;
+      $state.go('tab.home');
+    } else {
+      $("#login-failed").show();
+    }
   };
   //sign up madri!
   $scope.signup = function() {
     LoginService.signup($scope.data.username, $scope.data.password);
   };
-})
+
+  $scope.setUser = function () {
+    MongoDB.getUserDetails()
+  }
+}])
 
 .controller('QuestCtrl', function($scope, QuestService) {
   $scope.data = {};
@@ -53,7 +66,5 @@ $scope.oncreate = function() {
 })
 
 .controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+
 });
