@@ -77,6 +77,16 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
      }
    }
   })
+
+  .state('tab.search-charity', {
+    url: '/create-quest/search-charity',
+    views: {
+      'tab-create-quest': {
+        templateUrl: 'templates/tab-search-charity.html',
+        controller: 'CharityCtrl'
+      }
+    }
+  })
   // Each tab has its own nav history stack:
 
   .state('tab.home', {
@@ -108,6 +118,7 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
         }
       }
     })
+
     .state('tab.chat-detail', {
       url: '/chats/:chatId',
       views: {
@@ -117,6 +128,7 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
         }
       }
     })
+
 
   .state('tab.account', {
     url: '/account',
