@@ -1,12 +1,12 @@
 angular.module('starter.services', [])
 
-.factory('LoginService', function($state, MongoDB){
+.factory('LoginService', function($state, Firebase){
   return {
     // this is where we shall check if user already created
     checklogin: function(username, pwd) {
       // checks if user exists with username password combo
       // returns user details if exists
-      var userDetails = MongoDB.getUserDetails(username, pwd);
+      var userDetails = Firebase.getUserDetails(username, pwd);
       console.log("username: " + username + " - password: " + pwd);
       return userDetails;
     },
