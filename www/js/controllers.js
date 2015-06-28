@@ -4,23 +4,40 @@ angular.module('starter.controllers', [])
   function($scope, $rootScope, $state, $q, Users) {
 
   $scope.data = {};
+
   //check login kanappa
   $scope.login = function() {
-    var d = $q.defer();
     $("#login-failed").hide();
 
+    $scope.user = {};
+    $scope.user.username = $scope.data.username;
+
     Users.authenticateUser($scope.data.username, $scope.data.password)
-    .then(function(success){
+    .then(function(userDetails){
+      $scope.userDetails = userDetails;
       $state.go('tab.home');
     }, function(error){
-      console.log(JSON.stringify(error));
+      $("#login-failed").val(JSON.stringify(error))
       $("#login-failed").show();
     });
 
   };
   //sign up madri!
   $scope.signup = function() {
-    Users.createUser($scope.data.username, $scope.data.password);
+    $("#login-failed").hide()
+
+    $scope.user = {};
+    $scope.user.username = $scope.data.username;
+
+    Users.createUser($scope.data.username, $scope.data.password)
+    .then(function(userDetails){
+      $scope.userDetails = userDetails;
+      $state.go('tab.home');
+    }, function(error){
+      $("#login-failed").val(JSON.stringify(error.code))
+      $("#login-failed").show();
+    });;
+
   };
 
 }])
@@ -104,5 +121,5 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AccountCtrl', function($scope) {
-
+  console.log($scope);
 });
