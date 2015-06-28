@@ -31,29 +31,7 @@ angular.module('starter.controllers', [])
     console.log(JSON.stringify($scope.data));
     $scope.quests.$add($scope.data);
   };
-
-
-  //$scope.oncreate = QuestService.save($scope.data);
-<<<<<<< HEAD
-  $scope.oncreate = function() {
-    QuestService.save($scope.data);
-  };
-  console.log("Hello");
-  $scope.quests = QuestService.all();
-
-  $scope.addcount = function(quest) {
-    var temp = QuestService.addcount(quest);
-    $scope.quests = temp;
-  };
-})
-=======
-  // $scope.oncreate = function() {
-  //   QuestService.save($scope.data);
-  // };
-  // $scope.quests = QuestService.all();
-
 }])
->>>>>>> firebase integration
 
 .controller('DashCtrl', function($scope) {})
 
@@ -76,10 +54,6 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-<<<<<<< HEAD
-=======
-
->>>>>>> firebase integration
 .controller('AccountCtrl', function($scope) {
 
 });
