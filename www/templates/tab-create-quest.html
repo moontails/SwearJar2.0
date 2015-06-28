@@ -1,0 +1,41 @@
+<ion-view view-title="Create Quest">
+  <ion-content class="padding" >
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Quest Name</span>
+        <input type="text" placeholder="SwearJar001" ng-model="data.name">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Target</span>
+        <input type="email" placeholder="abc@gmail.com" ng-model="data.target">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Your Supporters (Optional)</span>
+        <input type="email" placeholder="def@gmail.com" ng-mode="data.supporter">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Your Contribution</span>
+        <input type="text" placeholder="$25" ng-mode="data.amount">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Penalty (per fault)</span>
+        <input type="text" placeholder="$0.5" ng-mode="data.penalty">
+      </label>
+      <label class="item item-input item-stacked-label">
+            <div class="input-label" ng-model="data.duration">
+              Duration
+              <select>
+                <option>1 week</option>
+                <option selected>2 weeks</option>
+                <option>1 month</option>
+                <option>2 months</option>
+              </select>
+            </div>
+      </label>
+    </div>
+
+    <button class="button" ng-click="oncreate()">
+      Create
+    </button>
+  </ion-content>
+</ion-view>

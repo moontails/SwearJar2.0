@@ -24,6 +24,12 @@ angular.module('starter.controllers', [])
 })
 
 .controller('DashCtrl', function($scope) {})
+.controller('QuestCtrl', function($scope, QuestService) {
+  $scope.data = {};
+  $scope.oncreate = function() {
+    QuestService.save($scope.data);
+  };		
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
@@ -42,6 +48,14 @@ angular.module('starter.controllers', [])
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
+})
+
+.controller('QuestCtrl', function($scope, QuestService) {
+
+$scope.data = {};
+$scope.oncreate = function() {
+  QuestService.save($scope.data);
+};
 })
 
 .controller('AccountCtrl', function($scope) {
