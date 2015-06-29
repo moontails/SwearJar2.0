@@ -1,0 +1,51 @@
+<!--
+This template loads for when the app is opened,
+The user at this point needs to sign up or login at this point.
+-->
+<ion-view title="Payment" name="login-view">
+  <ion-content class="padding"  style="text-align: center;">
+    <div>
+      <br/>
+      Please select a charity to continue<br/><br/><br/><br/>
+    </div>
+    <div class="list list-inset">
+
+      <label class="item item-input item-stacked-label" id="CharitySelect">
+          <button class="button icon-right ion-chevron-right button-clear" href="#/tab/search-charity" ng-click="selectCharity()">Select Charity</button>
+      </label>
+      <!-- <label class="item item-input item-stacked-label" id="CharityPay" style="display:none">
+          <span></span>
+          <input type="text" ng-model="payment.charityemail">
+          Thank you for your donation
+      </label> -->
+    </div>
+    <div class="list card" id="CharityPay" style="display:none">
+
+      <div class="item item-avatar">
+        A payment of <span id="donorAmount">$20</span> will be made to<br/><span id="donarName"></span>
+      </div>
+      <div class="item item-body text-center">
+        <p>
+          <a class="button button-assertive"
+           ng-href="https://venmo.com/?txn=pay&recipients=2179795043&amount=20&note=Battlehack%20donation&audience=public"
+           onclick='window.open(this.href, "_system", "location=yes"); return false;'>
+           Donate
+           </a>
+<!--           <a class="button button-calm" href="https://venmo.com/?txn=pay&recipients=2179795043&amount=20&note=Battlehack%20donation&audience=public">
+  Donate
+</a> -->
+        </p>
+      </div>
+
+      <div class="item tabs tabs-secondary">
+        <span>Thank you for your Donation.</span>
+      </div>
+
+    </div>
+
+  </ion-content>
+
+  <div class="bar bar-footer bar-dark">
+    <div class="title">Version: 1.15</div>
+  </div>
+</ion-view>

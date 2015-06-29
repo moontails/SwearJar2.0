@@ -1,0 +1,24 @@
+<ion-view view-title="Search Charity">
+  <ion-content class="padding" >
+
+    <div class="list">
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="Enter your search" ng-model="query.name"></input>
+        </label>
+        <button class="button button-small" ng-click="search()">Search</button>
+      </div>
+    </div>
+
+
+    <div class="list card">
+      <ion-item class="" ng-if="results" ng-repeat="result in results" type="item-text-wrap">
+        <a href="#" class="item" ng-click="onselect(result.name)">{{result.name}}</a>
+      </ion-item>
+    </div>
+
+
+
+  </ion-content>
+</ion-view>

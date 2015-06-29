@@ -9,23 +9,29 @@ The user at this point should have signed in
 
         <div class="list card">
 
-          <div class="item item-avatar">
-            <img src="../img/ionic.png">
-            <h2>{{quest.name}}</h2>
-            <p>{{quest.amount}}</p>
+          <div class="item item-avatar {{quest.status}}">
+            <img src="http://www.csit-service.org/main_files/index_files/charity_world.jpg">
+            <h2 class="{{quest.status}}"><b>{{quest.name}}</b></h2>
+            <p class="{{quest.status}}">Goal: {{"$ " + quest.amount}}</p>
           </div>
 
           <div class="item item-body text-center">
             <p>
-              <button class="button button-assertive" ng-click="addcount(quest)">
+              <button class="button button-assertive" ng-click="addcount(quest)" ng-if="quest.status=='active'">
                 Swear Tap
               </button>
+              <button class="button button-positive" ng-click="paymentgateway(quest)" ng-if="quest.status=='donate'">
+                Donate to Charity
+              </button>
+              <span ng-if="quest.status=='ended'">
+                <b>Quest Successfully Completed!</b>
+              </span>
             </p>
           </div>
 
           <div class="item tabs tabs-secondary">
-            <a class="tab-item" href="#/tab/quests/{{quest.id}}">Details</a>
-            <a class="tab-item" href="#">Count: {{quest.count}}</a>
+            <span class="tab-item">Swear Count: {{quest.count}}</span>
+            <span class="tab-item">Details</span>
           </div>
 
         </div>

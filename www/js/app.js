@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.quest', 'starter.backendServices'])
+angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.services', 'starter.quest', 'starter.backendServices'])
 
 .run(['$ionicPlatform', '$state', '$rootScope', '$http', 'Firebase',
     function($ionicPlatform, $state, $rootScope, $http, Firebase) {
@@ -77,6 +77,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
      }
    }
   })
+
+  .state('tab.search-charity', {
+    url: '/home/pay/search-charity',
+    views: {
+      'tab-home': {
+        templateUrl: 'templates/tab-search-charity.html',
+        controller: 'CharityCtrl'
+      }
+    }
+  })
   // Each tab has its own nav history stack:
 
   .state('tab.home', {
@@ -108,6 +118,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
+
     .state('tab.chat-detail', {
       url: '/chats/:chatId',
       views: {
@@ -117,6 +128,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
+
+    .state('tab.pay', {
+    url: '/home/pay',
+    views: {
+      'tab-home':{
+        templateUrl: 'templates/payment.html',
+        controller: 'PayCtrl'
+      }
+    }
+  })
+
 
   .state('tab.account', {
     url: '/account',
