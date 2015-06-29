@@ -79,10 +79,13 @@ angular.module('starter.controllers', [])
 
 }])
 
-.controller('PayCtrl', ['$scope', '$rootScope', '$state', function($scope, $rootScope, $state) {
-  $scope.makePayment = function(cardNumber, expiryDate) {
-    $http.post
-  }
+.controller('PayCtrl', ['$scope', '$rootScope', '$state', '$sce', function($scope, $rootScope, $state, $sce) {
+  // $scope.makePayment = function(cardNumber, expiryDate) {
+  //   var pay_url = "https://venmo.com/?txn=pay&recipients=2179795043&amount=20&note=Battlehack%20donation&audience=public";
+  //   $scope.renderHTML = function(html_code){
+  //     return $sce.trustAsHtml(html_code);
+  //   }
+  // }
 
   $scope.selectCharity = function() {
     $state.go('tab.search-charity');

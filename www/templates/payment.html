@@ -21,15 +21,19 @@ The user at this point needs to sign up or login at this point.
     </div>
     <div class="list card" id="CharityPay" style="display:none">
 
-      <div class="item item-avatar text-center">
-        A payment of <span id="donorAmount"></span> will be made to <span id="donarName"></span>
-        <br/>Please click the button below to continue.
+      <div class="item item-avatar">
+        A payment of <span id="donorAmount">$20</span> will be made to<br/><span id="donarName"></span>
       </div>
       <div class="item item-body text-center">
         <p>
-          <button class="button button-calm" ng-click="makePayment(payment.charityemail)">
-            Donate
-          </button>
+          <a class="button button-assertive"
+           ng-href="https://venmo.com/?txn=pay&recipients=2179795043&amount=20&note=Battlehack%20donation&audience=public"
+           onclick='window.open(this.href, "_system", "location=yes"); return false;'>
+           Donate
+           </a>
+<!--           <a class="button button-calm" href="https://venmo.com/?txn=pay&recipients=2179795043&amount=20&note=Battlehack%20donation&audience=public">
+  Donate
+</a> -->
         </p>
       </div>
 
@@ -38,7 +42,6 @@ The user at this point needs to sign up or login at this point.
       </div>
 
     </div>
-
 
   </ion-content>
 
