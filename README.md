@@ -17,6 +17,6 @@ To start off, users can sign up and login to to start challenging their friends.
 
 ![](https://raw.githubusercontent.com/moontails/SwearJar2.0/master/screenshots/login.png) 
 
-Once the quest duration is completed, the app will help you donate the amount raised to charity. Users can search for a charity and make their donations. Thus raising money for a good cause!
+Once the quest duration is completed, the app will help donate the amount raised to charity. Users can search for a charity and make their donations. Thus raising money for a good cause!
 
 ![](https://raw.githubusercontent.com/moontails/SwearJar2.0/master/screenshots/select-charity.png) 
